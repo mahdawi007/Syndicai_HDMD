@@ -23,9 +23,23 @@ class PythonPredictor:
         """ Download pretrained model. """
 #        self.model = torch.hub.load('ultralytics/yolov5', 'yolov5s', pretrained=True).autoshape()
 
-        self.classifierTyp = TextClassifier.load('/content/drive/MyDrive/type_disease_trans_more/final-model.pt')
-        self.classifierMis = TextClassifier.load('/content/drive/MyDrive/pure_corpus_17k_slow_bert_latest/final-model.pt')
-
+        #self.classifierTyp = TextClassifier.load('/content/drive/MyDrive/type_disease_trans_more/final-model.pt')
+        #self.classifierMis = TextClassifier.load('/content/drive/MyDrive/pure_corpus_17k_slow_bert_latest/final-model.pt')
+        
+        
+        
+        wget.download(
+            "https://drive.google.com/drive/folders/1lKTy9hqEn3xXh-tYQZlUx8m2rRKtiCcv?usp=sharing",
+            "/tmp/classifierMis/final-model.pt",
+        )
+        wget.download(
+            "https://drive.google.com/drive/folders/10--DeptxxFgEKWBL877yteytyf6CE_VS?usp=sharing",
+            "/tmp/classifierTyp/final-model.pt",
+        )
+        self.classifierTyp = TextClassifier.load("/tmp/classifierTyp/final-model.pt")
+        self.classifierMis = TextClassifier.load("/tmp/classifierMis/final-model.pt")
+        
+        
     # Prevent special characters like & and < to cause the browser to display something other than what you intended.
     def html_escape(text):
         return html.escape(text)
