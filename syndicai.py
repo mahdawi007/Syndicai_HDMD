@@ -41,12 +41,12 @@ class PythonPredictor:
         
         
     # Prevent special characters like & and < to cause the browser to display something other than what you intended.
-    def html_escape(text):
-        return html.escape(text)
+    def html_escape(self, payload):
+        return html.escape(payload)
 
-    def sentence_fun(sent):
+    def sentence_fun(self, payload):
         #print('Hisentencesssss')
-        text = sent
+        text = payload
     #  "nlp" Object is used to create documents with linguistic annotations.
         doc = nlp(text)
     # create list of sentence tokens
@@ -58,13 +58,13 @@ class PythonPredictor:
         return sents_list
 
     # Prevent special characters like & and < to cause the browser to display something other than what you intended.
-    def html_escape(text):
-        return html.escape(text)
+    def html_escape(self, payload):
+        return html.escape(payload)
 
-    def predict(text):
+    def predict(self, payload):
         #print('Hisentence')
         result=[]
-        sents_list=sentence_fun(text) # sentence_fun(text)
+        sents_list=sentence_fun(payload) # sentence_fun(text)
         myresult = pd.DataFrame({'sentence': sents_list}) #myresult = pd.DataFrame({'sentence': result})
         r = myresult['sentence'].replace('\n','', regex=True)
         r = r.replace('\n',' ', regex=True)
