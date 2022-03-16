@@ -3,3 +3,4 @@ anvil-uplink
 tqdm
 pandas
 IPython
+spacy
