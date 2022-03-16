@@ -8,6 +8,7 @@ import random
 from IPython.core.display import display, HTML
 from spacy.lang.en import English
 import anvil.server
+import wget
 anvil.server.connect("I7N2M2OP46BP74QKPAPNDCGP-T2FVRS5JEOANDXEG")
 
 # Load English tokenizer, tagger, parser, NER and word vectors
