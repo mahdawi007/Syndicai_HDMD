@@ -27,18 +27,16 @@ class PythonPredictor:
         #self.classifierTyp = TextClassifier.load('/content/drive/MyDrive/type_disease_trans_more/final-model.pt')
         #self.classifierMis = TextClassifier.load('/content/drive/MyDrive/pure_corpus_17k_slow_bert_latest/final-model.pt')
         
-        
-        
-        wget.download(
+        Mis = wget.download(
             "https://drive.google.com/file/d/1-Emkjcg05PNQBjFFpok7xTd_Dc2NnR8S/view?usp=sharing",
             "/tmp/classifierMis/final-model.pt",
         )
-        wget.download(
+        Typ = wget.download(
             "https://drive.google.com/file/d/10RZKwWkT1kcMa52PtPU4vjCt4OrKHnyB/view?usp=sharing",
             "/tmp/classifierTyp/final-model.pt",
         )
-        self.classifierTyp = TextClassifier.load("/tmp/classifierTyp/final-model.pt")
-        self.classifierMis = TextClassifier.load("/tmp/classifierMis/final-model.pt")
+        self.classifierTyp = TextClassifier.load(Typ)
+        self.classifierMis = TextClassifier.load(Mis)
         
         
     # Prevent special characters like & and < to cause the browser to display something other than what you intended.
