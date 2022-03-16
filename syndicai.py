@@ -30,11 +30,11 @@ class PythonPredictor:
         
         
         wget.download(
-            "https://drive.google.com/drive/folders/1lKTy9hqEn3xXh-tYQZlUx8m2rRKtiCcv?usp=sharing",
+            "https://drive.google.com/file/d/1-Emkjcg05PNQBjFFpok7xTd_Dc2NnR8S/view?usp=sharing",
             "/tmp/classifierMis/final-model.pt",
         )
         wget.download(
-            "https://drive.google.com/drive/folders/10--DeptxxFgEKWBL877yteytyf6CE_VS?usp=sharing",
+            "https://drive.google.com/file/d/10RZKwWkT1kcMa52PtPU4vjCt4OrKHnyB/view?usp=sharing",
             "/tmp/classifierTyp/final-model.pt",
         )
         self.classifierTyp = TextClassifier.load("/tmp/classifierTyp/final-model.pt")
