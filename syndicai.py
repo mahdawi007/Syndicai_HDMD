@@ -172,11 +172,10 @@ class PythonPredictor:
     def predict_iris2(text):
         return text
 
-highlighted_text = []
+#highlighted_text = []
 
-highlighted_text,overall_score=predict('Drink water to prevent heart disease. Drink water to not prevent heart disease.')
-highlighted_text
-#overall_score=predict_iris2()
-overall_score
+#highlighted_text,overall_score=predict('Drink water to prevent heart disease. Drink water to not prevent heart disease.')
+#highlighted_text
+#overall_score
 
-display(HTML(highlighted_text))
+#display(HTML(highlighted_text))
