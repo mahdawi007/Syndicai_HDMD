@@ -9,6 +9,7 @@ from IPython.core.display import display, HTML
 from spacy.lang.en import English
 import anvil.server
 import wget
+import gdown
 anvil.server.connect("I7N2M2OP46BP74QKPAPNDCGP-T2FVRS5JEOANDXEG")
 
 # Load English tokenizer, tagger, parser, NER and word vectors
@@ -27,10 +28,20 @@ class PythonPredictor:
         #self.classifierTyp = TextClassifier.load('/content/drive/MyDrive/type_disease_trans_more/final-model.pt')
         #self.classifierMis = TextClassifier.load('/content/drive/MyDrive/pure_corpus_17k_slow_bert_latest/final-model.pt')
         
-        Mis = wget.download("https://drive.google.com/file/d/1-Emkjcg05PNQBjFFpok7xTd_Dc2NnR8S/view?usp=sharing")
-        Typ = wget.download("https://drive.google.com/file/d/10RZKwWkT1kcMa52PtPU4vjCt4OrKHnyB/view?usp=sharing")
-        self.classifierTyp = TextClassifier.load(Typ)
-        self.classifierMis = TextClassifier.load(Mis)
+        # Download a file 
+        # same as the above, and you can copy-and-paste a URL from Google Drive with fuzzy=True
+        outputMis = "/tmp/final-model-Mis.pt"
+        urlMis = "https://drive.google.com/file/d/1-Emkjcg05PNQBjFFpok7xTd_Dc2NnR8S/view?usp=sharing"
+        gdown.download(url=urlMis, output=outputMis, quiet=False, fuzzy=True)
+        
+        # Download a file 
+        # same as the above, and you can copy-and-paste a URL from Google Drive with fuzzy=True
+        outputTyp = "/tmp/final-model-Typ.pt"
+        urlTyp = "https://drive.google.com/file/d/10RZKwWkT1kcMa52PtPU4vjCt4OrKHnyB/view?usp=sharing"
+        gdown.download(url=urlTyp, output=outputTyp, quiet=False, fuzzy=True)
+
+        self.classifierTyp = TextClassifier.load("/tmp/final-model-Typ.pt")
+        self.classifierMis = TextClassifier.load("/tmp/final-model-Mis.pt")
         
         
     # Prevent special characters like & and < to cause the browser to display something other than what you intended.
