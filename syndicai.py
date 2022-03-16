@@ -60,7 +60,8 @@ class PythonPredictor:
     # Prevent special characters like & and < to cause the browser to display something other than what you intended.
     def html_escape(self, payload):
         return html.escape(payload)
-
+    
+    @anvil.server.callable
     def predict(self, payload):
         #print('Hisentence')
         result=[]
@@ -173,7 +174,7 @@ class PythonPredictor:
 
 highlighted_text = []
 
-highlighted_text,overall_score=predict_iris('Drink water to prevent heart disease. Drink water to not prevent heart disease.')
+highlighted_text,overall_score=predict('Drink water to prevent heart disease. Drink water to not prevent heart disease.')
 highlighted_text
 #overall_score=predict_iris2()
 overall_score
