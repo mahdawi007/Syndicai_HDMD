@@ -27,14 +27,8 @@ class PythonPredictor:
         #self.classifierTyp = TextClassifier.load('/content/drive/MyDrive/type_disease_trans_more/final-model.pt')
         #self.classifierMis = TextClassifier.load('/content/drive/MyDrive/pure_corpus_17k_slow_bert_latest/final-model.pt')
         
-        Mis = wget.download(
-            "https://drive.google.com/file/d/1-Emkjcg05PNQBjFFpok7xTd_Dc2NnR8S/view?usp=sharing",
-            "/tmp/classifierMis/final-model.pt",
-        )
-        Typ = wget.download(
-            "https://drive.google.com/file/d/10RZKwWkT1kcMa52PtPU4vjCt4OrKHnyB/view?usp=sharing",
-            "/tmp/classifierTyp/final-model.pt",
-        )
+        Mis = wget.download("https://drive.google.com/file/d/1-Emkjcg05PNQBjFFpok7xTd_Dc2NnR8S/view?usp=sharing")
+        Typ = wget.download("https://drive.google.com/file/d/10RZKwWkT1kcMa52PtPU4vjCt4OrKHnyB/view?usp=sharing")
         self.classifierTyp = TextClassifier.load(Typ)
         self.classifierMis = TextClassifier.load(Mis)
         
