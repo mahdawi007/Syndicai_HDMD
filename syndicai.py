@@ -12,7 +12,7 @@ anvil.server.connect("I7N2M2OP46BP74QKPAPNDCGP-T2FVRS5JEOANDXEG")
 
 # Load English tokenizer, tagger, parser, NER and word vectors
 nlp = English()
-nlp.add_pipe(nlp.create_pipe('sentencizer'))
+nlp.add_pipe('sentencizer')
 result=[]
 
 overall_score= 0
