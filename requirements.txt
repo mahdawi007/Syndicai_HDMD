@@ -2,3 +2,4 @@ flair
 anvil-uplink
 tqdm
 pandas
+IPython
