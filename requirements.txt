@@ -1,5 +1,4 @@
 flair
-spacy.lang.en
 anvil-uplink
 tqdm
 pandas
