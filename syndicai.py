@@ -38,9 +38,9 @@ class PythonPredictor:
         # same as the above, and you can copy-and-paste a URL from Google Drive with fuzzy=True
         outputTyp = "/tmp/final-model-Typ.pt"
         urlTyp = "https://drive.google.com/file/d/10RZKwWkT1kcMa52PtPU4vjCt4OrKHnyB/view?usp=sharing"
-        gdown.download(url=urlTyp, output=outputTyp, quiet=False, fuzzy=True)
+        #gdown.download(url=urlTyp, output=outputTyp, quiet=False, fuzzy=True)
 
-        self.classifierTyp = TextClassifier.load("/tmp/final-model-Typ.pt")
+        self.classifierTyp = TextClassifier.load("/tmp/final-model-Mis.pt")
         self.classifierMis = TextClassifier.load("/tmp/final-model-Mis.pt")
         
         
